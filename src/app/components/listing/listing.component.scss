@@ -1,0 +1,26 @@
+.company_list {
+    display: flex;
+    padding: 25px;
+    flex-direction: column;
+}
+
+.company_logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+td {
+    padding-right: 15px !important;
+}
+
+mat-icon {
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
