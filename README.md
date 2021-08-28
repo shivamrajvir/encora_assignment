@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
+This will allow you to login, just add user email, from given api of assignment
+
+after that companies and contacts will be listed, contacts can be added, edited and deleted from list, locally ofcourse since there no apis for that.
+you will find design patterns and methods for angular practices applied, thank you
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
