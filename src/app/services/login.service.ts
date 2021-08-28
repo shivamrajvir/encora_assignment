@@ -11,7 +11,7 @@ import { iUser } from '../interfaces/users.model';
 export class LoginService {
 
   routesHash = {
-    users: 'https://my-json-server.typicode.com/bokadedarvin/AngularDeveloperSample/users'
+    users: 'http://localhost:3000/users'
   };
 
   constructor(private _http: HttpClient) { }

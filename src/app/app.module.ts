@@ -8,16 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModules } from './material.modules';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ListingComponent } from './components/listing/listing.component';
 import { CommonModule } from '@angular/common';
-import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ListingComponent,
-    DetailsComponent
   ],
   imports: [
     BrowserModule,

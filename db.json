@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "name": "admin",
+      "password": "admin",
+      "type": "admin",
+      "id": "0"
+    },
+    {
+      "name": "shivam",
+      "type": "student",
+      "password": "student",
+      "id": "1"
+    }
+  ],
+  "notices": [
+    {
+      "title": "This is notice 1",
+      "description": "This is notice 1 for test",
+      "uploadDate": "2021-08-28T11:05:03.857Z"
+    },
+    {
+      "title": "test 2",
+      "description": "test 2 edit",
+      "uploadDate": "2021-08-28T17:58:44.929Z",
+      "id": 1
+    },
+    {
+      "title": "test 3",
+      "description": "test 3",
+      "uploadDate": "2021-08-28T18:00:40.129Z",
+      "id": 2
+    }
+  ]
+}

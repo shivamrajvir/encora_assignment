@@ -10,7 +10,7 @@ import { LoginService } from './../../services/login.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  email: string = '';
+  username: string = '';
 
   errorMessage: string = '';
 
@@ -19,12 +19,18 @@ export class LoginComponent implements OnInit {
   constructor(private _router: Router, private loginService: LoginService) {}
 
   ngOnInit(): void {
-    if (localStorage.getItem('id')) {
-      this._router.navigate(['companies']);
+    let userType = localStorage.getItem('type');
+    if (userType === 'admin') {
+      this._router.navigate(['noticeForAdmin']);
+    } else if (userType === 'student') {
+      this._router.navigate(['noticeForStudents']);
     }
-    this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.email, Validators.required]),
-    });
+    // else {
+      this.loginForm = new FormGroup({
+        username: new FormControl('', Validators.required),
+        password: new FormControl('', Validators.required),
+      });
+    // }
   }
 
   doLogin() {
@@ -35,16 +41,20 @@ export class LoginComponent implements OnInit {
       .subscribe((users) => {
         let isUserValid = false;
         for (let user of users) {
-          if (user.email === this.loginForm.value.email) {
-            localStorage.setItem('id', user.id);
+          if (user.name === this.loginForm.value.username) {
+            localStorage.setItem('type', user.type);
             isUserValid = true;
             break;
           }
         }
         if (isUserValid) {
-          this._router.navigate(['companiesAndContacts']);
+          if (localStorage.getItem('type') === 'admin') {
+            this._router.navigate(['noticeForAdmin']);
+          } else {
+            this._router.navigate(['noticeForStudents']);
+          }
         } else {
-          this.errorMessage = 'Email or password are incorrect';
+          this.errorMessage = 'username or password are incorrect';
         }
       });
   }

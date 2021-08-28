@@ -1,0 +1,26 @@
+<div class="login_component">
+    <mat-card class="form_component">
+        <mat-card-title>Notice</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="noticeForm" (ngSubmit)="saveNotice()">
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Title" type="text" formControlName="title" name="title">
+                        <mat-error *ngIf="noticeForm.controls['title'].hasError('required')">Title is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>description</mat-label>
+                        <input matInput placeholder="description" type="text" formControlName="description" name="description">
+                        <mat-error *ngIf="noticeForm.controls['description'].hasError('required')">description is required</mat-error>
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="saveNotice()" [disabled]="noticeForm?.invalid">Save</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

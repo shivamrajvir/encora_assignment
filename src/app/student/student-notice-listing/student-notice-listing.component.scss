@@ -10,10 +10,6 @@
     object-fit: cover;
 }
 
-td {
-    padding-right: 15px !important;
-}
-
 mat-icon {
     cursor: pointer;
     padding: 0 5px;
@@ -21,6 +17,26 @@ mat-icon {
 
 .flex {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.search {
+    margin: 0 20px;
+    width: 100%;
+}
+
+.min-80 {
+    min-width: 80%;
+}
+
+td {
+    padding-right: 15px !important;
+}
+
+table {
+    width: 100%;
 }

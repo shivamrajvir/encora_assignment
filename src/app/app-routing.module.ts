@@ -2,15 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { ListingComponent } from './components/listing/listing.component';
 import { AuthGuard } from './guards/auth.guard';
-import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'companiesAndContacts', component: ListingComponent, canActivate: [AuthGuard] },
-  { path: 'details', component: DetailsComponent, canActivate: [AuthGuard] },
-  { path: 'details/:id', component: DetailsComponent, canActivate: [AuthGuard] },
+  { path: 'noticeForStudents', loadChildren: () => import('./student/student.module').then(m => m.StudentModule), canActivate: [AuthGuard], data: {roles: 'student'} },
+  { path: 'noticeForAdmin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard], data: {roles: 'admin'} },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' }
 ];
